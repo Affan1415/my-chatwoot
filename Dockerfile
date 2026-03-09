@@ -152,4 +152,4 @@ WORKDIR /app
 EXPOSE 3000
 
 # Run migrations and start server
-CMD ["sh", "-c", "bundle exec rails db:prepare && bundle exec rails server -b 0.0.0.0 -p ${PORT:-3000}"]
+CMD ["sh", "-c", "rm -f /app/tmp/pids/server.pid && bundle exec rails db:prepare && bundle exec rails server -b 0.0.0.0 -p ${PORT:-3000}"]
